@@ -18,6 +18,7 @@ td  {height:100px}
 <p id="demo">
 Quntiny of exercises: <input type="number" id="qty" value="10">
 Limit for calculation: <input type="number" id="limit" value="100">
+Name <input type="text" id="name" Value="Alena">
 Click the button to display the value of the value attribute of the text field.
 
 <button onclick="myFunction()">Generate</button>
@@ -32,6 +33,7 @@ Click the button to display the value of the value attribute of the text field.
 function myFunction() {
   var qty = document.getElementById("qty").value;
   var limit = document.getElementById("limit").value;
+  var name = document.getElementById("name").value;
   var first = 0;
   var second = 0;
   var mytext ="";
@@ -39,7 +41,7 @@ function myFunction() {
 	var columns = 3;
   var col = 1;
   
- mytext += "<h1 style="+"text-align:center"+">Mathe f&uuml;r Alena</h1>";
+ mytext += "<h1 style="+"text-align:center"+">Mathe f&uuml;r " + name +"</h1>";
  mytext += "<h4 style="+"text-align:center"+">Subtraction bis " + limit.toString() +"</h4>" +"<hr>" + "<br></br>";
  mytext += "<div>";
  mytext += "<table>";
@@ -53,7 +55,7 @@ function myFunction() {
     mytext += "<td>";
     mytext += first.toString() + " - " + second.toString()+" = ";
     mytext += "</td>";
-    mytext += "<td> ___ </td>";
+    mytext += "<td> _____ </td>";
     mytext += "<td>&emsp;</td>";
 		if (col >= columns) {
     	col = 0;
