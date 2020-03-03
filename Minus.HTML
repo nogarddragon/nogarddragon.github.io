@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+ body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+div {font-size:150%;}
+td  {height:100px}
+</style>
+
+
+<p id="demo">
+Quntiny of exercises: <input type="number" id="qty" value="10">
+Limit for calculation: <input type="number" id="limit" value="100">
+Click the button to display the value of the value attribute of the text field.
+
+<button onclick="myFunction()">Generate</button>
+
+</p>
+
+
+
+
+
+<script>
+function myFunction() {
+  var qty = document.getElementById("qty").value;
+  var limit = document.getElementById("limit").value;
+  var first = 0;
+  var second = 0;
+  var mytext ="";
+  var i;
+	var columns = 3;
+  var col = 1;
+  
+ mytext += "<h1 style="+"text-align:center"+">Mathe für Alena</h1>";
+ mytext += "<h4 style="+"text-align:center"+">Subtraction bis " + limit.toString() +"</h4>" +"<hr>" + "<br></br>";
+ mytext += "<div>";
+ mytext += "<table>";
+ mytext += "<tr>";
+  
+  for (i = 0; i < qty; i++) {
+  
+    first = Math.floor(Math.random() * limit);
+    second = Math.floor(Math.random() * first);
+  	
+    mytext += "<td>";
+    mytext += first.toString() + " - " + second.toString()+" = ";
+    mytext += "</td>";
+    mytext += "<td> _____ </td>";
+    mytext += "<td>&emsp;</td>";
+		if (col >= columns) {
+    	col = 0;
+    	mytext += "</tr>";    
+      } 
+    col += 1;
+    } 
+  
+  mytext += "</table></div>"
+  document.getElementById("demo").innerHTML = mytext;
+  
+  
+}
+</script>
+
+</body>
+</html>
