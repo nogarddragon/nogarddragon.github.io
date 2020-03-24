@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<meta charset="UTF-8">
+
+<style>
+ body {
+        height: 842px;
+        width: 595px;
+        /* to centre page on screen*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+ /*div {font-size:150%;} */
+td  {
+	height:100px;
+	font-size:150%;	
+}
+</style>
+
+
+<div id="demo">
+
+<h1> Multiplikate </h1>
+Quntiny of exercises: <input type="number" id="qty" value="10">
+Number of digits 1: <input type="number" id="limit1" value="2">
+Number of digits 2: <input type="number" id="limit2" value="1">
+Name <input type="text" id="name" Value="Alena">
+Click the button to display exercises.
+<button onclick="mySumm()">Generate</button>
+
+</div>
+
+
+
+
+
+<script>
+function mySumm() {
+  var qty = document.getElementById("qty").value;
+  var limita = document.getElementById("limit1").value;
+  var limitb = document.getElementById("limit2").value;
+  var name = document.getElementById("name").value;
+  var first = 0;
+  var second = 0;
+  var mytext ="";
+  var i;
+	var columns = 3;
+  var col = 1;
+  
+ mytext += "<h1 style="+"text-align:center"+">Mathe f&uuml;r " + name +"</h1>";
+ mytext += "<h4 style="+"text-align:center"+">Multiplikate "+"</h4>" +"<hr>" + "<br></br>";
+ mytext += "<div>";
+ mytext += "<table>";
+ mytext += "<tr>";
+  
+  for (i = 0; i < qty; i++) {
+  
+    first = Math.floor(Math.random() * (10**limita));
+    second = Math.floor(Math.random() * (10**limitb));
+  	
+    mytext += "<td>";
+    mytext += first.toString() + " * " + second.toString()+" = ";
+    mytext += "</td>";
+    mytext += "<td>____</td>";
+    mytext += "<td>&emsp;</td>";
+		if (col >= columns) {
+    	col = 0;
+    	mytext += "</tr>";    
+      } 
+    col += 1;
+    } 
+  
+  mytext += "</table></div>"
+  document.getElementById("demo").innerHTML = mytext;
+  
+  
+}
+</script>
+
+</body>
+</html>
